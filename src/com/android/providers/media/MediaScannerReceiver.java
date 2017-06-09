@@ -62,10 +62,9 @@ public class MediaScannerReceiver extends BroadcastReceiver {
         if (Intent.ACTION_BOOT_COMPLETED.equals(action)) {
             switch (msob) {
                 case BOOT_SCAN_ENABLE:
-                    // Scan both internal and external storage
+                    // Scan internal only
 
                     scan(context, MediaProvider.INTERNAL_VOLUME);
-                    scan(context, MediaProvider.EXTERNAL_VOLUME);
                     break;
                 case BOOT_SCAN_ASK:
                     askToScan(context, true);
